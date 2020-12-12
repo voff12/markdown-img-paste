@@ -29,6 +29,13 @@ module.exports =
             else
                 if grammar.scopeName != 'source.gfm' then return
 
+        text = clipboard.readText()
+        if text
+          editor = atom.workspace.getActiveTextEditor()
+
+          editor.insertText(atom.clipboard.read());
+          
+        # judge img
         img = clipboard.readImage()
         if img.isEmpty() then return
 
